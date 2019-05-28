@@ -22,17 +22,17 @@ public class TicketMaster
 		System.out.println ("purchasing tickets option"); //purchasing ticket option goes here
 	    }
 
-	    if (userchoice == 2)
+	    else if (userchoice == 2)
 	    {
 		System.out.println ("Check ticket status option"); //Checking the ticket status option goes here
 	    }
 
-	    if (userchoice == 3)
+	    else if (userchoice == 3)
 	    {
 		System.out.println ("Check availability option"); //Checking the availability option goes here
 	    }
 
-	    if (userchoice == 4)
+	    else if (userchoice == 4)
 	    {
 		System.out.println ("Operator Menu option"); //The Operators Menu option goes here
 	    }
