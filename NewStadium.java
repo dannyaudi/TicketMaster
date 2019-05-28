@@ -1,12 +1,10 @@
 public class NewStadium
 {
-
     private String[] [] stadium;
 
     public NewStadium ()
     {
-
-	stadium = {
+	stadium = new String[][]{
 		{"0", "0", "0", "0", "0", "0"},
 		{"0", "0", "0", "0", "0", "0"},
 		{"0", "0", "X", "X", "0", "0"},
@@ -23,18 +21,34 @@ public class NewStadium
 
 	for (int i = 0 ; i < s.length ; i++)
 	{
-
-	    System.out.println ();
-
 	    for (int j = 0 ; j < s [0].length ; j++)
 	    {
-		System.out.print (s [i] [j]);
+		System.out.print (s [i] [j] + " ");
 	    }
+	    
+	    System.out.println ();
 	}
     }
 
     public String[] [] getStadium ()
     {
 	return stadium;
+    }
+
+    public int checkReserved (NewStadium a)
+    {
+	String[] [] s = a.getStadium ();
+
+	int counter = 0;
+
+	for (int i = 0 ; i < s.length ; i++)
+	{
+	    for (int j = 0 ; j < s [0].length ; j++)
+	    {
+		if (s [i] [j] == "R")
+		    counter++;
+	    }
+	}
+	return counter;
     }
 }
