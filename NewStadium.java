@@ -19,14 +19,17 @@ public class NewStadium
 
 	String[] [] s = a.getStadium ();
 
+	System.out.println("    0 1 2 3 4 5");
+	System.out.println("   ------------");
+	
 	for (int i = 0 ; i < s.length ; i++)
 	{
+	    System.out.print(i + " | ");
 	    for (int j = 0 ; j < s [0].length ; j++)
 	    {
 		System.out.print (s [i] [j] + " ");
 	    }
-	    
-	    System.out.println ();
+	    System.out.println ();            
 	}
     }
 
@@ -50,5 +53,12 @@ public class NewStadium
 	    }
 	}
 	return counter;
+    }
+    
+    public void reserveSeat(NewStadium a, int row, int col)
+    {
+	String[] [] s = a.getStadium ();
+    
+	s[row][col] = "R";
     }
 }
