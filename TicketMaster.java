@@ -14,6 +14,7 @@ public class TicketMaster
 	    System.out.println ("2) Check ticket status");
 	    System.out.println ("3) Check Availability");
 	    System.out.println ("4) Operator Menu");
+	    System.out.println ("5) Exit ticket master");
 	    
 	    userchoice = TextIO.getlnInt ();
 	    
@@ -36,15 +37,20 @@ public class TicketMaster
 	    {
 		System.out.println ("Operator Menu option"); //The Operators Menu option goes here
 	    }
+	    else if (userchoice == 5)
+	    {
+		System.out.println("Exiting ticket master");
+	    }
+
 	    else 
 	    {
 		System.out.println ("Invalid number. Please enter again");
 	    }
 
 	}
-	while (userchoice > 0);
+	while (userchoice != 5);
 	
-	// end of program
-
+	//end of program
+	
     }
 }  
