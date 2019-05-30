@@ -3,13 +3,15 @@ public class Ticket
 {
 	private int seatNumber;
 	private int date;
+	private int typeOfTicket;
 	private int price;
 	
-	public Ticket (int s, int d, int p)
+	public Ticket (int s, int d, int p, String t)
 	{
 	    seatNumber = s;
 	    date = d;
-	    price = p;
+	    typeOfTicket = t;
+	    price = typeCalc(typeOfTicket, p);
 	}
 	
 	public int getSeatNumber ()
@@ -22,6 +24,18 @@ public class Ticket
 	    return date;
 	}
 	
+	public int typeCalc ()
+	{
+	     if (typeOfTicket = "Silver");
+		return p + 100;
+	     
+	     if (typeOfTicket = "Gold");
+		return p + 200;
+		
+	     if (typeOfTicket = "Platinum");
+		return p + 300;
+	}
+
 	public int getprice ()
 	{
 	    return price;
