@@ -55,7 +55,6 @@ public class TicketMaster
 	while (userchoice != 5);
     }
 
-
     public static void Purchase (NewStadium a)
     {
 	int row;  //row of stadium
@@ -78,6 +77,8 @@ public class TicketMaster
 	    
 	    if(row <0 || row > 5 || col < 0 || col > 5)
 		System.out.println("Bad input, try again.");
+	    else if (checkReserved())
+		System.out.println("Seat is unavailable. Try again.");
 	}
 	while (col < 0 || col > 5 || row < 0 || row > 5);
 	
@@ -86,38 +87,19 @@ public class TicketMaster
 	a.reserveSeat (a, row, col);
     }
 
-
-    //150 and 300
-
-    public static double Price (int row, int col)  //not returning
+    public static double Price (int row, int col) 
     {
-	int price = 0;
+	if (row == 0 || row == 5) //row 0 and 5 cost 150
+	    return 150;
 
-	if (row == 0 || row == 5) //row 0 and 5 cost 100
+	else if (row >= 1 && row <= 4)
 	{
-	    price = 150;
+	    if(col == 0 || col == 5)
+		return 150;
+	    else if(col >=1 && col <= 4)
+		return 300;
 	}
-
-	else if (row == 1 && col == 1 || col == 5) //row 1 and col 0 and 5 cost 200
-	{
-	    price = 150;
-
-	}
-
-	else if (row == 1 && col != 0 && col != 5) //row 1 and col 1-4 cost 300
-	{
-	    price = 300;
-
-	}
-
-	else if (row == 2 && col != 1 && col != 5) //row 2 and col 1-4 cost 300
-	{
-	    price = 300;
-
-	}
-
-
-	return price;
-
-    } // double
+	
+	return -1;
+    }
 }

@@ -38,7 +38,7 @@ public class NewStadium
 	return stadium;
     }
 
-    public int checkReserved (NewStadium a)
+    public int sumReserved (NewStadium a)
     {
 	String[] [] s = a.getStadium ();
 
@@ -60,5 +60,15 @@ public class NewStadium
 	String[] [] s = a.getStadium ();
     
 	s[row][col] = "R";
+    }
+    
+    public boolean checkReserved(NewStadium a, int row, int col)
+    {
+	String[] [] s = a.getStadium ();
+	
+	if(s[row][col] == "R" && s[row][col] == "X")
+	    return false;
+	    
+	return true;
     }
 }
