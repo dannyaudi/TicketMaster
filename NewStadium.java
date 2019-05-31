@@ -1,9 +1,14 @@
 public class NewStadium
 {
     private String[] [] stadium;
+    private String name;
+    private String date;
 
-    public NewStadium ()
+    public NewStadium (String n, String d)
     {
+	name = n;
+	date = d;
+	
 	stadium = new String[][]{
 		{"0", "0", "0", "0", "0", "0"},
 		{"0", "0", "0", "0", "0", "0"},
@@ -32,10 +37,25 @@ public class NewStadium
 	    System.out.println ();            
 	}
     }
+    
+    public String printInfo(NewStadium a)
+    {
+	return a.getName() + " | " + a.getDate(); 
+    }
 
     public String[] [] getStadium ()
     {
 	return stadium;
+    }
+    
+    public String getName()
+    {
+	return name;
+    }
+    
+    public String getDate()
+    {
+	return date;
     }
 
     public int sumReserved (NewStadium a)
@@ -55,20 +75,22 @@ public class NewStadium
 	return counter;
     }
     
-    public void reserveSeat(NewStadium a, int row, int col)
+    public String[][] reserveSeat(NewStadium a, int row, int col)
     {
 	String[] [] s = a.getStadium ();
     
 	s[row][col] = "R";
+	
+	return s;
     }
     
     public boolean checkReserved(NewStadium a, int row, int col)
     {
 	String[] [] s = a.getStadium ();
 	
-	if(s[row][col] == "R" && s[row][col] == "X")
+	if(s[row][col] == "R" || s[row][col] == "X")
+	    return true;
+	else
 	    return false;
-	    
-	return true;
     }
 }
