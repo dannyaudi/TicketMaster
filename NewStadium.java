@@ -19,6 +19,7 @@ public class NewStadium
 	    };
     }
 
+    // Prints the stadium with rows and columns labelled
     public void print (NewStadium a)
     {
 
@@ -38,11 +39,13 @@ public class NewStadium
 	}
     }
     
+    // Returns the name and date of the event formatted neatly
     public String printInfo(NewStadium a)
     {
 	return a.getName() + " | " + a.getDate(); 
     }
 
+    // returns the stadium as an array of Strings
     public String[] [] getStadium ()
     {
 	return stadium;
@@ -57,7 +60,8 @@ public class NewStadium
     {
 	return date;
     }
-
+    
+    // Returns the number of seats reserved in a stadium
     public int sumReserved (NewStadium a)
     {
 	String[] [] s = a.getStadium ();
@@ -75,6 +79,7 @@ public class NewStadium
 	return counter;
     }
     
+    // Reserves a seat by rewriting spot as "R"
     public String[][] reserveSeat(NewStadium a, int row, int col)
     {
 	String[] [] s = a.getStadium ();
@@ -84,6 +89,7 @@ public class NewStadium
 	return s;
     }
     
+    // Checks if a seat is available to purchase
     public boolean checkReserved(NewStadium a, int row, int col)
     {
 	String[] [] s = a.getStadium ();

@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public class Utils
 {
-    public static void Purchase (NewStadium a)
+    public static void Purchase (NewStadium a, ArrayList c)
     {
 	int row, col;
 
@@ -25,6 +27,8 @@ public class Utils
 	System.out.println ("Your ticket will cost $" + Price (row, col));
 
 	a.reserveSeat (a, row, col);
+	
+	c.add(a.getName() + " on " + a.getDate() + ", row " + row + ", column " + col);
     }
     
     // this method determines the price of the seat being purchased
@@ -44,4 +48,24 @@ public class Utils
 
 	return -1;
     }
+    
+    /* This method will not work in old versions of Java
+    public static void SelectEvent(ArrayList e)
+    {
+	System.out.println("Please select an event");
+    
+	for(int i = 0; i < e.size(); i++)
+	    System.out.println(i + ") " + e.get(i).printInfo(e.get(i)));
+	
+	int choice = TextIO.getlnInt();
+	
+	while(choice < 0 || choice >= e.size())
+	{
+	    System.out.println("Bad input. Try again");
+	    choice = TextIO.getlnInt();
+	}
+	
+	return e.get(choice);
+    }
+    */
 }

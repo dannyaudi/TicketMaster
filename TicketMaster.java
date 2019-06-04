@@ -10,6 +10,7 @@ public class TicketMaster
 	NewStadium a = new NewStadium ("Concert", "01/01/2000");
 
 	// list of NewStadiums, contains all the events created
+	// Need to declare Arraylist of only type NewStadium
 	ArrayList events = new ArrayList ();
 	
 	// temporary
@@ -38,14 +39,16 @@ public class TicketMaster
 	    {
 		System.out.println ("Purchasing Ticket");
 
-		// here we will select an event
-
+		// Selecting an event
+		// NewStadium temp = Utils.SelectEvent(events);
+		
+		// replace a with temp
 		Utils.Purchase (a, confirmation);
 
 		System.out.println ("Forwarding to process your payment");
 		System.out.println ("...");
 
-		try     // simulating payment processing
+		try     // Simulating payment processing
 		{
 		    Thread.sleep (1000);
 		    System.out.println ("...");
@@ -58,10 +61,10 @@ public class TicketMaster
 		    Thread.currentThread ().interrupt ();
 		}
 	       
-		codeNumber++;
+		codeNumber++;   // Incrementing the confirmation code and giving it to the user
 		System.out.println ("Transaction Complete. Your confirmation code is " + codeNumber + ". Returning to main menu.");
 
-		try
+		try     // Simple timer to allow reading
 		{
 		    Thread.sleep (2000);
 		}
@@ -78,9 +81,9 @@ public class TicketMaster
 		
 		int codeInput = TextIO.getlnInt ();
 		
+		// Checking if input is valid, if number does not exist then asks again
 		while (codeInput <= 1000 || codeInput - 1001 >= confirmation.size() || codeInput < 0)
-		{        
-		    //System.out.println("TEST2   " + (codeInput - 1001) + "    " + (codeInput - 1001 >= confirmation.size ()));
+		{ 
 		    if (codeInput < 1000 || codeInput - 1001 >= confirmation.size () || codeInput - 1001 < 0)
 			System.out.println ("That confirmation code does not exist. Please try again or enter 0 to exit.");
 		    
@@ -92,21 +95,19 @@ public class TicketMaster
 		
 		if(codeInput == 0)
 		    System.out.println("Returning to main menu.");
-		else
+		    
+		else    // Prints the info of that ticket, calculates index by reducing the confirmation code by 1001
 		    System.out.println ("Your ticket is for: " + confirmation.get (codeNumber - 1001));
 	    }
 
 	    else if (userchoice == 3)
 	    {
 		System.out.println ("Check Availability");
-
-		for (int i = 0 ; i < events.size () ; i++)
-		{
-		    // Need to declare Arraylist of only type NewStadium, or change method parameters
-		    //System.out.println(events.get(i).printInfo(events.get(i)));
-		    //NewStadium temp = events.get(i);
-		    //System.out.println(temp.toString() + " | " + temp.sumReserved(temp));
-		}
+		
+		// Selecting an event and printing the stadium and number of seats taken
+		// NewStadium temp = Utils.SelectEvent(events);           
+		// temp.print(temp);
+		// System.out.println("There are " + temp.sumReserved(temp) + " seats taken out of 32");
 	    }
 
 	    else if (userchoice == 4)
