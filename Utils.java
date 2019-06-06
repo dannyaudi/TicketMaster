@@ -98,8 +98,8 @@ public class Utils
 	{
 	    BufferedReader in = new BufferedReader (new FileReader (logName));
 
-	    // Reads the log for the number of launches, and increments by one and creates a String
-	    String temp = Integer.toString(Integer.parseInt (in.readLine ()) + 1);  
+	    // Reads the log for the number of launches, and increments by one and creates a String            
+	    String temp = Integer.toString((Integer.parseInt (in.readLine ())) + 1);  
 
 	    BufferedWriter out = new BufferedWriter (new FileWriter (new File (logName)));
 

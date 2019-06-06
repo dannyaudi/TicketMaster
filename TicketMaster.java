@@ -1,9 +1,13 @@
 import java.util.ArrayList;
+import java.io.*;
 
 public class TicketMaster
 {
-    public static void main (String[] args)
+    public static void main (String[] args) throws IOException
     {
+	// Logging that program has been launched
+	Utils.LogIncrease();    
+    
 	System.out.println ("Welcome to the online TicketMaster");
 
 	// temporary
@@ -31,7 +35,7 @@ public class TicketMaster
 	    System.out.println ("2) Check Ticket Status");
 	    System.out.println ("3) Check Availability");
 	    System.out.println ("4) Operator Menu");
-	    System.out.println ("5) Exit TicketMaster");
+	    System.out.println ("Enter 0 to exit TicketMaster");
 
 	    userchoice = TextIO.getlnInt ();
 
@@ -114,22 +118,16 @@ public class TicketMaster
 	    {
 		System.out.println ("Operator Menu");
 		
-		System.out.println("Enter the option you wish to use\n");
-		System.out.println("1) Create new event");
-		System.out.println("2) Rename an event");
-		System.out.println("3) Change the date of an event");
-		System.out.println("4) Delete an event");
-		System.out.println("5) Check log details");
-		System.out.println("Enter 0 to exit");
+		OperatorMenu.OperatorMenuOption(events);                    
 	    }
 
-	    else if (userchoice == 5)
+	    else if (userchoice == 0)
 		System.out.println ("Exiting TicketMaster");
 
 	    else
 		System.out.println ("Invalid option. Please enter again");
 	}
-	while (userchoice != 5);
+	while (userchoice != 0);
     }
 
 
