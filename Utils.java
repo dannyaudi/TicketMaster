@@ -58,6 +58,8 @@ public class Utils
 
 
     /* This method will not work in old versions of Java
+    // Prints a list of all events currently saved, and grabs input from the user
+    // Returns the NewStadium event selected by the user
     public static void SelectEvent(ArrayList e)
     {
 	System.out.println("Please select an event");
