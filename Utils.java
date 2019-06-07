@@ -31,11 +31,11 @@ public class Utils
 	    
 	    // Error handling, check if seat exists and is available
 	    if (row < 0 || row > 5 || col < 0 || col > 5)
-		System.out.println ("Bad input, try again.");
+			System.out.println ("Bad input, try again.");
 	    else if (a.checkReserved (a, row, col))
-		System.out.println ("Seat is unavailable. Try again.");
+			System.out.println ("Seat is unavailable. Try again.");
 	}
-	while (col < 0 || col > 5 || row < 0 || row > 5);
+	while (col < 0 || col > 5 || row < 0 || row > 5 || ((row > 1 && row < 4) && (col > 1 && col < 4)) || a.checkReserved(a, row, col));
 
 	System.out.println ("Your ticket will cost $" + nf.format (Price (a, row, col)));
 
@@ -65,10 +65,10 @@ public class Utils
     }
 
 
-    /* This method will not work in old versions of Java
+    // This method will not work in old versions of Java
     // Prints a list of all events currently saved, and grabs input from the user
     // Returns the NewStadium event selected by the user
-    public static void SelectEvent(ArrayList e)
+    public static NewStadium SelectEvent(ArrayList<NewStadium> e)
     {
 	System.out.println("Please select an event");
 
@@ -85,7 +85,7 @@ public class Utils
 
 	return e.get(choice);
     }
-    */
+    //*/
 
     // This method is called at the start of the program
     // It keeps track of the number of times the program has been launched through a log file

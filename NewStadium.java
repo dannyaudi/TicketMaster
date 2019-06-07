@@ -42,7 +42,7 @@ public class NewStadium
     // Returns the name and date of the event formatted neatly
     public String printInfo(NewStadium a)
     {
-	return a.getName() + " | " + a.getDate(); 
+	return a.getName() + " on " + a.getDate(); 
     }
 
     // returns the stadium as an array of Strings
@@ -59,7 +59,17 @@ public class NewStadium
     public String getDate()
     {
 	return date;
-    }
+	}
+	
+	public void setName(String n)
+	{
+		name = n;
+	}
+
+	public void setDate(String d)
+	{
+		date = d;
+	}
     
     // Returns the number of seats reserved in a stadium
     public int sumReserved (NewStadium a)
