@@ -16,7 +16,7 @@ public class TicketMaster
 	// list of NewStadiums, contains all the events created
 	ArrayList<NewStadium> events = new ArrayList<> ();
 	
-	// temporary
+	// Adding default event to the list of events
 	events.add (a);
 
 	// List of strings containing info on tickets, according to their confirmation number
@@ -27,6 +27,7 @@ public class TicketMaster
 	int codeNumber = 1000;
 
 	int userchoice;
+	
 	do
 	{
 	    System.out.println ("\nPlease enter which option you wish to use\n");
